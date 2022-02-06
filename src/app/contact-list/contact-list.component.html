@@ -1,0 +1,7 @@
+<section>
+  <a role="button" class="btn btn-primary" routerLink="/contacts/create">Add Contact</a>
+</section>
+<ul class="contact-list">
+  <app-contact-list-item li *ngFor="let contact of contacts" [contact]="contact"
+  (clicked)="handleContactClicked($event)"></app-contact-list-item>
+</ul>

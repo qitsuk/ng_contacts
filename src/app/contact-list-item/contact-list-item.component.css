@@ -1,0 +1,12 @@
+.contact-list-item{
+  border-bottom: 1px solid #a79c9c;
+  padding: .5em 0;
+}
+.contact-list-item__email {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.contact-list-item__name {
+  margin-bottom: 0;
+}

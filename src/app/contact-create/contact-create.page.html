@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Add New Contact!</h1>
+  <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+    <fieldset class="mb-3">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-control" type="text" id="name" name="name" placeholder="John Doe" ngModel #name="ngModel"
+        required minlength="2"
+        [ngClass]="{'is-valid': name.valid, 'is-invalid': (name.invalid && (name.dirty || name.touched))}">
+    </fieldset>
+
+    <fieldset class="mb-3">
+      <label class="form-label" for="email">Email</label>
+      <input class="form-control" type="email" id="email" name="email" placeholder="johndoe@example.com" ngModel
+        #email="ngModel" required
+        [ngClass]="{'is-valid': email.valid, 'is-invalid': (email.invalid && (email.dirty || email.touched))}">
+    </fieldset>
+
+    <fieldset class="mb-3">
+      <label class="form-label" for="phone">Phone</label>
+      <input class="form-control" type="tel" id="phone" name="phone" placeholder="94684635" ngModel #phone="ngModel" minlength="8"
+        required [ngClass]="{'is-valid': phone.valid, 'is-invalid': (phone.invalid && (phone.dirty || phone.touched))}">
+    </fieldset>
+
+    <fieldset class="mb-3">
+      <label class="form-label" for="avatar">Username</label>
+      <input class="form-control" type="text" id="avatar" name="avatar" placeholder="Later" ngModel #avatar="ngModel"
+        required
+        [ngClass]="{'is-valid': avatar.valid, 'is-invalid': (avatar.invalid && (avatar.dirty || avatar.touched))}">
+    </fieldset>
+
+    <fieldset class="mb-3">
+      <label class="form-label" for="street">Street</label>
+      <input class="form-control" type="text" id="street" name="street" placeholder="45 Street" ngModel
+        #street="ngModel" required
+        [ngClass]="{'is-valid': street.valid, 'is-invalid': (street.invalid && (street.dirty || street.touched))}">
+    </fieldset>
+
+    <fieldset class="mb-3">
+      <label class="form-label" for="city">City</label>
+      <input class="form-control" type="text" id="city" name="city" placeholder="Your city" ngModel #city="ngModel"
+        required [ngClass]="{'is-valid': city.valid, 'is-invalid': (city.invalid && (city.dirty || city.touched))}">
+    </fieldset>
+
+    <fieldset class="mb-3">
+      <label class="form-label" for="country">Country</label>
+      <input class="form-control" type="text" id="country" name="country" placeholder="Your Country" ngModel
+        #country="ngModel" required
+        [ngClass]="{'is-valid': country.valid, 'is-invalid': (country.invalid && (country.dirty || country.touched))}">
+    </fieldset>
+    <br>
+    <button class="btn btn-danger">Cancel</button>
+    &nbsp;
+    <button type="submit" [disabled]="createForm.invalid" class="btn btn-primary">Create User</button>
+  </form>
+</div>

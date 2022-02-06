@@ -1,0 +1,46 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "avatar": "https://avatars.dicebear.com/api/bottts/qiTsuk.svg",
+      "name": "Dewald Els",
+      "email": "dewald.els@noroff.com",
+      "phone": "52145478",
+      "address": {
+        "street": "123 Street",
+        "city": "Rasta",
+        "country": "Norway"
+      },
+      "deleted": false,
+      "createdAt": 1643960670470
+    },
+	{
+      "id": 2,
+      "avatar": "https://avatars.dicebear.com/api/bottts/qiTsuk.svg",
+      "name": "Oliver The Doggo",
+      "email": "oliver@catzarelame.com",
+      "phone": "5487811",
+      "address": {
+        "street": "123 Street",
+        "city": "Rasta",
+        "country": "Norway"
+      },
+      "deleted": false,
+      "createdAt": 1643960670470
+    },
+	{
+      "id": 3,
+      "avatar": "https://avatars.dicebear.com/api/bottts/qiTsuk.svg",
+      "name": "Boots the Cat",
+      "email": "kitty@screwdogs.com",
+      "phone": "5131841251",
+      "address": {
+        "street": "123 Street",
+        "city": "Rasta",
+        "country": "Norway"
+      },
+      "deleted": false,
+      "createdAt": 1643794632048
+    }
+  ]
+}
