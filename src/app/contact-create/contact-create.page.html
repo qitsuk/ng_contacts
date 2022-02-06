@@ -4,21 +4,36 @@
     <fieldset class="mb-3">
       <label class="form-label" for="name">Name</label>
       <input class="form-control" type="text" id="name" name="name" placeholder="John Doe" ngModel #name="ngModel"
-        required minlength="2"
+        required
+        minlength="2"
         [ngClass]="{'is-valid': name.valid, 'is-invalid': (name.invalid && (name.dirty || name.touched))}">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <p *ngIf="name.errors?.['required']">You must enter a name</p>
+            <p *ngIf="name.errors?.['minlength']">Your name is too short. Must be at least 2.</p>
+        </div>
     </fieldset>
 
     <fieldset class="mb-3">
       <label class="form-label" for="email">Email</label>
-      <input class="form-control" type="email" id="email" name="email" placeholder="johndoe@example.com" ngModel
+      <input class="form-control" type="text" id="email" name="email" placeholder="johndoe@example.com" ngModel
         #email="ngModel" required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]\.[a-z]{2,4}$"
         [ngClass]="{'is-valid': email.valid, 'is-invalid': (email.invalid && (email.dirty || email.touched))}">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <p *ngIf="email.errors?.['required']">You must enter an email.</p>
+          <p *ngIf="email.errors?.['pattern']">Sorry, that doesn't seem to be a valid email.</p>
+        </div>
     </fieldset>
 
     <fieldset class="mb-3">
       <label class="form-label" for="phone">Phone</label>
       <input class="form-control" type="tel" id="phone" name="phone" placeholder="94684635" ngModel #phone="ngModel" minlength="8"
         required [ngClass]="{'is-valid': phone.valid, 'is-invalid': (phone.invalid && (phone.dirty || phone.touched))}">
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+          <p *ngIf="phone.errors?.['required']">You must enter a phonenumber!</p>
+          <p *ngIf="phone.errors?.['minlength']">Your phonenumber must contain 8 digits!</p>
+
+        </div>
     </fieldset>
 
     <fieldset class="mb-3">
@@ -26,6 +41,9 @@
       <input class="form-control" type="text" id="avatar" name="avatar" placeholder="Later" ngModel #avatar="ngModel"
         required
         [ngClass]="{'is-valid': avatar.valid, 'is-invalid': (avatar.invalid && (avatar.dirty || avatar.touched))}">
+        <div *ngIf="avatar.invalid && (avatar.dirty || avatar.touched)">
+          <p *ngIf="avatar.errors?.['required']">You must enter a username.</p>
+        </div>
     </fieldset>
 
     <fieldset class="mb-3">
@@ -33,12 +51,18 @@
       <input class="form-control" type="text" id="street" name="street" placeholder="45 Street" ngModel
         #street="ngModel" required
         [ngClass]="{'is-valid': street.valid, 'is-invalid': (street.invalid && (street.dirty || street.touched))}">
+        <div *ngIf="street.invalid && (street.dirty || street.touched)">
+          <p *ngIf="street.errors?.['required']">You must enter your street address.</p>
+        </div>
     </fieldset>
 
     <fieldset class="mb-3">
       <label class="form-label" for="city">City</label>
       <input class="form-control" type="text" id="city" name="city" placeholder="Your city" ngModel #city="ngModel"
         required [ngClass]="{'is-valid': city.valid, 'is-invalid': (city.invalid && (city.dirty || city.touched))}">
+        <div *ngIf="city.invalid && (city.dirty || city.touched)">
+          <p *ngIf="city.errors?.['required']">You must enter your current city of residence.</p>
+        </div>
     </fieldset>
 
     <fieldset class="mb-3">
@@ -46,6 +70,9 @@
       <input class="form-control" type="text" id="country" name="country" placeholder="Your Country" ngModel
         #country="ngModel" required
         [ngClass]="{'is-valid': country.valid, 'is-invalid': (country.invalid && (country.dirty || country.touched))}">
+        <div *ngIf="country.invalid && (country.dirty || country.touched)">
+          <p *ngIf="country.errors?.['required']">You must enter your country of residence.</p>
+        </div>
     </fieldset>
     <br>
     <button class="btn btn-danger">Cancel</button>
